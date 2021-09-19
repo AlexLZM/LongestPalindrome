@@ -1,5 +1,9 @@
 def longestPalindrome(s):
-    T = '#'.join('~'+s+'$') # 'aba' -> '~#a#b#a#$' to make sure expansion will not pass the end of s + 1
+     
+    # 'aba' -> '~#a#b#a#$' to make sure expansion will not pass the end of s + 1 
+    # and we can map back index of T to index of s with //2 operation
+    T = '#'.join('~'+s+'$')
+    
     N = len(T) # N = 2 * len(s) + 3
     radius = [0] * N
     center = rightBound = 0 # current right most palindrome center and its rightbound
