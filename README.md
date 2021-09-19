@@ -1,4 +1,4 @@
-# LongestPalingdrone
+# LongestPalindrome
 
 Find the longest palindrome substring with Manacher algorithm
 
