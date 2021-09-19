@@ -5,7 +5,7 @@ def longestPalindrome(s):
     T = '#'.join('~'+s+'$')
     
     N = len(T) # N = 2 * len(s) + 3
-    radius = [0] * N
+    radius = [0] * N # all index's radius are initially 0
     center = rightBound = 0 # current right most palindrome center and its rightbound
     
     for i in range(1, N - 1): # i is current processing index, which is at right of the current center
@@ -13,8 +13,7 @@ def longestPalindrome(s):
         diff = rightBound - i
         if diff > 0: # i is within the current right bound, so we can know its radius is at least same as its left mirror but it can not exceed the right bound
             radius[i] = min(diff, radius[iMirror])
-        else:
-            radius[i] = 0
+
         
         # try to expend the palindrome at i
         while T[i - 1 - radius[i]] == T[i + 1 + radius[i]]:
